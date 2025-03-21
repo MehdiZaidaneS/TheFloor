@@ -4,7 +4,7 @@ import "./Welcome.css";
 const Welcome = () => {
     return (
         <div>
-            <h1>Welcome to The Floor Gamasdasde!</h1>
+            <h1>Welcome to The Floasdor Gamasdasde!</h1>
         </div>
     );
 };

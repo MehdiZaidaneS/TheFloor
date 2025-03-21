@@ -1,18 +1,28 @@
-name: Build and Deploy
-on: [push]
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
+name: Build and Deploy  
+on:  
+  push:
+    branches:
+      - main
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: |
-          npm install
-          npm run build
+permissions:
+  contents: write  # Grants write access for deployment
+
+jobs:  
+  build-and-deploy:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: Checkout 🛎️  
+        uses: actions/checkout@v4  
+
+      - name: Install and Build 🔧  
+        run: |  
+          npm install  
+          npm run build  
+
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages  # This will create the branch if it doesn't exist
+          folder: build
+          clean: true  # Ensures old files are deleted

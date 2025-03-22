@@ -17,7 +17,8 @@ jobs:
       - name: Install and Build 🔧  
         run: |  
           cd frontend
-          npm install  
+          npm ci  
+          chmod +x node_modules/.bin/react-scripts  
           npm run build  
 
       - name: Deploy 🚀

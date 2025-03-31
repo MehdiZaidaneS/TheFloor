@@ -1,0 +1,17 @@
+HTML{
+    
+    background: conic-gradient(
+        #00457e 0deg 90deg, 
+        #1e3d5f 90deg 180deg, 
+        #00457e 180deg 270deg, 
+        #1e3d5f 270deg 360deg
+      ); 
+    height: 100%;
+}
+
+body{
+    margin: 0 auto;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    
+}

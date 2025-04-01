@@ -1,7 +1,9 @@
 nameList = []
 
-def setPlayersAmount(playersamount):
-    return playersamount
+def setPlayersAmount():
+    players = input("Set players amount:" )
+    return int(players)
+    
 
 
 def setNames(playersamount):
@@ -11,6 +13,4 @@ def setNames(playersamount):
     print(nameList)
 
 
-
-
-setNames(setPlayersAmount(5))        
+setNames(setPlayersAmount())        

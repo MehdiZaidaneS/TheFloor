@@ -6,7 +6,9 @@ const Welcome = () => {
 
     const [playersNum, setplayesNum] = useState(0)
     const [amountConfirmed, setamountConfirmed] = useState(false) 
+   
 
+    
     
     function setInputs(){
       let content = []

@@ -10,6 +10,3 @@ class Player:
 
 
 
-mehdi = Player("Mehdi", "Euroviiisut")
-
-mehdi.printvalues()

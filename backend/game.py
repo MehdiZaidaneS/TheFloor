@@ -1,16 +1,55 @@
-nameList = []
+players = []
+categoryList = []
+from database import *
+from player import *
 
 def setPlayersAmount():
-    players = input("Set players amount:" )
+    players = input("Set players amount: " )
     return int(players)
     
+def getListCategories(list):
+    for x in list:
+        categoryList.append(x)
+        
 
 
-def setNames(playersamount):
-    for x in range(1,playersamount+1):
-        name = input("Set name " + str(x) + ": ")
-        nameList.append(name)
-    print(nameList)
+def setUpGame(playeramount):
+    
+    names = []
+    
+    def unique_name():
+        while True:
+           print("")
+           name = input(f"Set name  {len(names)+1} : ")
+           if name not in names:
+               names.append(name)
+               return name
+           print("Name exists, choose another name")
 
+    def valid_category(name):
+        while True:
+           print(categoryList)
+           category = input("Choose category for " + name + ": ")
+           if category in categoryList:
+              categoryList.remove(category)
+              return category
 
-setNames(setPlayersAmount())        
+           print("Category incorrect, choose again")
+               
+    for _ in range(playeramount):
+      name = unique_name()
+      category = valid_category(name)
+      player = Player(name, category)
+      players.append(player)
+      player.printvalues()
+
+   
+        
+   
+def start():
+    getListCategories(getCategories())
+    setUpGame(setPlayersAmount())
+
+ 
+
+start()

@@ -11,7 +11,7 @@
     color: white;
     background-color: gray;
     width: fit-content;
-    height: 35%;
+    height: fit-content;
     text-align: center;
     font-size: 19px;
     border: 5px solid gold;
@@ -48,6 +48,7 @@
 
 .playerSet p{
     font-size: 25px;
+   
 }
 
 
@@ -64,4 +65,22 @@
 #startButton:hover{
     cursor: pointer;
     text-decoration: underline;
+}
+
+
+.playersList{
+    width: 100%;
+}
+
+.player{
+    width: 100%;
+}
+
+.playersList p{
+    margin: 10px 0px 0px 0px;
+}
+
+
+.player input{
+    margin-right: 5px;
 }

@@ -39,7 +39,8 @@ def setUpGame(playeramount):
     for _ in range(playeramount):
       name = unique_name()
       category = valid_category(name)
-      player = Player(name, category)
+      category_id = getCategoryId(category)
+      player = Player(name, category, category_id)
       players.append(player)
       player.printvalues()
 

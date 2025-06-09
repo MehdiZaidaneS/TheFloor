@@ -11,8 +11,9 @@ class Player:
         print("Hi i am " + self.name + " and my category is " +  self.category + " and my id is " + str(self.category_id))
      
     
-    def question(self):
-        print("hello")
+    def getEasyQuestion(self):
+        response = getQuestion(self.category_id, "easy")
+        print(response)
         
 
 

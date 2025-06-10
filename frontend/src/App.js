@@ -1,10 +1,21 @@
+import { useState } from 'react';
 import './App.css';
-import Welcome from './welcomepage/Welcome';
+import Welcome from './main/Welcome';
 
 function App() {
+  
+  const [PlayerAmount, setPlayerAmount] = useState(false)
+  //const [playerName, setplayerName] = useState(false)
+  //const [game, setGame] = useState(false)
+   
+
   return (
     <div className="App">
-      <Welcome/>
+      {
+        !PlayerAmount &&
+        <Welcome setPlayerAmount = {setPlayerAmount}/>
+      }
+      
     </div>
   );
 }
